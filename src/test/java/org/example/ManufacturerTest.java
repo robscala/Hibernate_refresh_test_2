@@ -30,7 +30,7 @@ public class ManufacturerTest
     }
 
     @Test
-    public void refresh_test() throws Exception {
+    public void refresh_test() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Manufacturer manufacturer = entityManager.find(Manufacturer.class, MANUFACTURER_ID);
@@ -38,7 +38,9 @@ public class ManufacturerTest
         entityManager.refresh(manufacturer);
         System.out.println("Calling manufacturer.getPeople()");
         List<Person> people = manufacturer.getPeople();
+        System.out.println("Calling people.get(0)");
         Person person1 = people.get(0);
+        System.out.println("Person is in EM: " + entityManager.contains(person1));
         System.out.println("Changing name");
         String newFirstName = "name1".equals(person1.getFirstName()) ? "name2" : "name1";
         entityManager.getTransaction().begin();
