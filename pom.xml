@@ -51,8 +51,8 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <base>${project.build.testOutputDirectory}</base>
-                            <dir>${project.build.testOutputDirectory}</dir>
+                            <base>${project.build.outputDirectory}</base>
+                            <dir>${project.build.outputDirectory}</dir>
                             <enableAssociationManagement>false</enableAssociationManagement>
                             <enableDirtyTracking>true</enableDirtyTracking>
                             <enableExtendedEnhancement>false</enableExtendedEnhancement>
